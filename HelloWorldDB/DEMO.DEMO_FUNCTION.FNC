@@ -8,6 +8,7 @@ tmpVar NUMBER;
    Ver        Date        Author           Description
    ---------  ----------  ---------------  ------------------------------------
    1.0        7/2/2017   DEMO              1. Created this function.
+   1.1        6/27/2018  Demo               2. made some changes
 
    NOTES:
 
