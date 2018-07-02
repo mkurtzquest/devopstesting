@@ -30,3 +30,4 @@ BEGIN
        RAISE;
 END DEMO_FUNCTION;
 /
+/* this is a sample comment*/
