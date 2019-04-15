@@ -12,3 +12,5 @@ SELECT   b.order_date, d.price, a.cust_id, a.NAME, c.qty, d.part_id,
      AND (price < 150)
      AND (d.qty_on_hand < 250)
 ORDER BY b.order_date ASC
+
+/*added this for git */
