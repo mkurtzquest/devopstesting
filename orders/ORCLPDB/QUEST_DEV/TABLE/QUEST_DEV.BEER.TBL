@@ -1,0 +1,41 @@
+DROP TABLE QUEST_DEV.BEER CASCADE CONSTRAINTS;
+
+CREATE TABLE QUEST_DEV.BEER
+(
+  NAME                            VARCHAR2(500 BYTE),
+  ID                              VARCHAR2(10 BYTE),
+  BREWERY_ID                      VARCHAR2(26 BYTE),
+  STYLE_ID                        VARCHAR2(30 BYTE),
+  ALCOHOL_BY_VOLUME               VARCHAR2(30 BYTE),
+  INTERNATIONAL_BITTERNESS_UNITS  VARCHAR2(30 BYTE),
+  STANDARD_REFERENCE_METHOD       VARCHAR2(30 BYTE),
+  UNIVERSAL_PRODUCT_CODE          VARCHAR2(30 BYTE),
+  FILEPATH                        VARCHAR2(30 BYTE),
+  DESCRIPTION                     VARCHAR2(4000 BYTE),
+  STYLE                           VARCHAR2(75 BYTE),
+  CATEGORY                        VARCHAR2(75 BYTE),
+  BREWER                          VARCHAR2(100 BYTE),
+  ADDRESS                         VARCHAR2(210 BYTE),
+  CITY                            VARCHAR2(50 BYTE),
+  STATE                           VARCHAR2(30 BYTE),
+  COUNTRY                         VARCHAR2(30 BYTE),
+  COORDINATES                     VARCHAR2(30 BYTE),
+  WEBSITE                         VARCHAR2(200 BYTE)
+)
+TABLESPACE TOOLS
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            NEXT             1M
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           )
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+MONITORING;
