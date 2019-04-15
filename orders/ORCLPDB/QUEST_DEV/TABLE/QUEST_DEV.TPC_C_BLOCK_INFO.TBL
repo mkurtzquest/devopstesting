@@ -1,0 +1,47 @@
+DROP TABLE QUEST_DEV.TPC_C_BLOCK_INFO CASCADE CONSTRAINTS;
+
+CREATE TABLE QUEST_DEV.TPC_C_BLOCK_INFO
+(
+  TABLENAME      VARCHAR2(30 BYTE)              NOT NULL,
+  CURRENT_BLOCK  NUMBER                         NOT NULL,
+  MAX_BLOCK      NUMBER                         NOT NULL
+)
+TABLESPACE TOOLS
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            NEXT             1M
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           )
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+MONITORING;
+
+
+--  There is no statement for index QUEST_DEV.SYS_C008451.
+--  The object is created when the parent object is created.
+
+ALTER TABLE QUEST_DEV.TPC_C_BLOCK_INFO ADD (
+  PRIMARY KEY
+  (TABLENAME)
+  USING INDEX
+    TABLESPACE TOOLS
+    PCTFREE    10
+    INITRANS   2
+    MAXTRANS   255
+    STORAGE    (
+                INITIAL          64K
+                NEXT             1M
+                MINEXTENTS       1
+                MAXEXTENTS       UNLIMITED
+                PCTINCREASE      0
+                BUFFER_POOL      DEFAULT
+               )
+  ENABLE VALIDATE);
