@@ -1,0 +1,56 @@
+DROP TABLE QUEST_DEV.OW_PARTS CASCADE CONSTRAINTS;
+
+CREATE TABLE QUEST_DEV.OW_PARTS
+(
+  PART_ID             NUMBER                    NOT NULL,
+  SUPPLIER_ID         VARCHAR2(12 BYTE),
+  PART_DESC           VARCHAR2(80 BYTE)         NOT NULL,
+  PARENT_PART_ID      NUMBER,
+  SUPPLIER_PART_ID    VARCHAR2(15 BYTE),
+  PRICE               NUMBER                    DEFAULT (0),
+  BIN                 NUMBER                    NOT NULL,
+  QTY_ON_HAND         NUMBER                    DEFAULT (0),
+  RESTOCK_QTY         NUMBER                    DEFAULT (0),
+  BACKUP_SUPPLIER_ID  VARCHAR2(12 BYTE)
+)
+TABLESPACE TOOLS
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            NEXT             1M
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           )
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+MONITORING;
+
+
+CREATE UNIQUE INDEX QUEST_DEV.OW_PARTS_PK ON QUEST_DEV.OW_PARTS
+(PART_ID)
+LOGGING
+TABLESPACE TOOLS
+PCTFREE    10
+INITRANS   2
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            NEXT             1M
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+ALTER TABLE QUEST_DEV.OW_PARTS ADD (
+  CONSTRAINT OW_PARTS_PK
+  PRIMARY KEY
+  (PART_ID)
+  USING INDEX QUEST_DEV.OW_PARTS_PK
+  ENABLE VALIDATE);
