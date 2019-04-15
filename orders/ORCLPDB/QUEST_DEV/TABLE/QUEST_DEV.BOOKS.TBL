@@ -1,0 +1,30 @@
+DROP TABLE QUEST_DEV.BOOKS CASCADE CONSTRAINTS;
+
+CREATE TABLE QUEST_DEV.BOOKS
+(
+  "Author"            NVARCHAR2(132),
+  "Title"             NVARCHAR2(244),
+  ISBN                NVARCHAR2(50),
+  "Publisher"         NVARCHAR2(77),
+  "Publication Date"  NVARCHAR2(50),
+  "Format"            NVARCHAR2(50),
+  "Edition"           NVARCHAR2(83),
+  "Pages"             NVARCHAR2(50)
+)
+TABLESPACE TOOLS
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            NEXT             1M
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           )
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+MONITORING;
