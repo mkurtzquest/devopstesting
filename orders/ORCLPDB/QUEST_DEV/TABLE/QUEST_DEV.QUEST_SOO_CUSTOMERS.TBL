@@ -1,0 +1,48 @@
+DROP TABLE QUEST_DEV.QUEST_SOO_CUSTOMERS CASCADE CONSTRAINTS;
+
+CREATE TABLE QUEST_DEV.QUEST_SOO_CUSTOMERS
+(
+  ID                NUMBER,
+  CUSTOMER_NAME     VARCHAR2(2000 BYTE),
+  CUSTOMER_ADDRESS  VARCHAR2(2000 BYTE),
+  STATUS            VARCHAR2(1 BYTE)
+)
+TABLESPACE TOOLS
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            NEXT             1M
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           )
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+MONITORING;
+
+
+--  There is no statement for index QUEST_DEV.SYS_C008492.
+--  The object is created when the parent object is created.
+
+ALTER TABLE QUEST_DEV.QUEST_SOO_CUSTOMERS ADD (
+  PRIMARY KEY
+  (ID)
+  USING INDEX
+    TABLESPACE TOOLS
+    PCTFREE    10
+    INITRANS   2
+    MAXTRANS   255
+    STORAGE    (
+                INITIAL          64K
+                NEXT             1M
+                MINEXTENTS       1
+                MAXEXTENTS       UNLIMITED
+                PCTINCREASE      0
+                BUFFER_POOL      DEFAULT
+               )
+  ENABLE VALIDATE);
